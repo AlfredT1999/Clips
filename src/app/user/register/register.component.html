@@ -5,7 +5,8 @@
         <label class="inline-block mb-2">
             Name
         </label>
-        <app-input [control]="name" placeholder="Enter Name"></app-input>
+        <app-input [control]="name" placeholder="Enter Name">
+        </app-input>
     </div>
 
     <!-- Email -->
@@ -13,7 +14,8 @@
         <label class="inline-block mb-2">
             Email
         </label>
-        <app-input [control]="email" placeholder="Enter Email" type="email"></app-input>
+        <app-input [control]="email" placeholder="Enter Email" type="email">
+        </app-input>
     </div>
 
     <!-- Age -->
@@ -21,7 +23,8 @@
         <label class="inline-block mb-2">
             Age
         </label>
-        <app-input [control]="age" placeholder="Enter Age" type="number"></app-input>
+        <app-input [control]="age" placeholder="Enter Age" type="number">
+        </app-input>
     </div>
 
     <!-- Password -->
@@ -29,7 +32,8 @@
         <label class="inline-block mb-2">
             Password
         </label>
-        <app-input [control]="password" placeholder="Enter Password" type="password"></app-input>
+        <app-input [control]="password" placeholder="Enter Password" type="password">
+        </app-input>
     </div>
 
     <!-- Confirm Password -->
@@ -37,7 +41,8 @@
         <label class="inline-block mb-2">
             Confirm Password
         </label>
-        <app-input [control]="confirm_password" placeholder="Confirm Password" type="password"></app-input>
+        <app-input [control]="confirm_password" placeholder="Confirm Password" type="password">
+        </app-input>
     </div>
 
     <!-- Phone Number -->
@@ -45,12 +50,8 @@
         <label class="inline-block mb-2">
             Phone Number
         </label>
-        <input 
-            type="text"
-            class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
-            duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
-            placeholder="Enter Phone Number" 
-        />
+        <app-input [control]="phoneNumber" placeholder="Enter Phone Number" format="(000)000-0000">
+        </app-input>
     </div>
 
     <!-- Button -->
