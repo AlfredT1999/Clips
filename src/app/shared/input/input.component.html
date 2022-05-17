@@ -1,10 +1,10 @@
 <!-- Input -->
 <input 
     [formControl]="control"
-    type="text"
+    [type]="[type]"
     class="block w-full py-1.5 px-3 text-gray-200 border border-gray-400 transition
     duration-500 focus:outline-none rounded bg-transparent focus:border-indigo-400"
-    placeholder="Enter Name"
+    [placeholder]="[placeholder]"
 />
 
 <!-- Validations -->
@@ -23,5 +23,10 @@
         It must be at least 
         {{ control.errors?.minlength.requiredLength }}
         characters long.
+    </p>
+    <p *ngIf="control.errors?.email" 
+        class="text-red-400"
+    >
+        You must enter a valid email
     </p>
 </ng-container>
