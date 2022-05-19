@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-register',
@@ -48,7 +49,10 @@ export class RegisterComponent {
   alertMsg = 'Please wait! Your account is being created.'
   inSubmission = false
 
-  constructor(private auth: AngularFireAuth) {}
+  constructor(
+    private auth: AngularFireAuth,
+    private db: AngularFirestore
+  ) {}
 
   async register() {
     this.showAlert = true
@@ -60,7 +64,13 @@ export class RegisterComponent {
 
     try {
       const userCredentials = await this.auth.createUserWithEmailAndPassword(email, password)
-      console.log(userCredentials)
+      
+      await this.db.collection('users').add({
+        name: this.name.value,
+        email: this.email.value,
+        age: this.age.value,
+        phoneNumber: this.phoneNumber.value
+      })
     } 
     catch (error) {
       console.error(error)
