@@ -9,10 +9,16 @@ export class RegisterValidators {
             const control = group.get('password')
             const matchingControl = group.get('confirm_password')
     
-            if(!control || ! matchingControl) return { controlNotFound: false }
+            if(!control || ! matchingControl)
+            {
+                console.error('Form controls can not be found in the form group.')
+                return { controlNotFound: false }
+            } 
     
             const error = control.value === matchingControl.value ? null : { noMatch: true }
-    
+            
+            matchingControl.setErrors(error)
+
             return error
         }
     }
