@@ -53,4 +53,9 @@
     >
         Passwords do not match.
     </p>
+    <p *ngIf="control.errors?.emailTaken" 
+        class="text-red-400"
+    >
+        Email was taken. Please enter another email.
+    </p>
 </ng-container>
