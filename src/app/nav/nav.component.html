@@ -24,10 +24,19 @@
           </li>
           <ng-template #authLinks>
             <li>
-              <a class="px-2" href="#">Manage</a>
+              <a 
+                class="px-2" 
+                routerLink="/"
+                routerLinkActive="text-indigo-400"
+                [routerLinkActiveOptions]="{ exact: true}"
+              >
+                Manage
+              </a>
             </li>
             <li>
-              <a class="px-2" href="#">Upload</a>
+              <a class="px-2" href="#">
+                Upload
+              </a>
             </li>
             <li>
               <a class="px-2" (click)="logout($event)" href="#">
@@ -36,7 +45,11 @@
             </li>
           </ng-template>
           <li>
-            <a class="px-2" routerLink="/about">
+            <a 
+              class="px-2" 
+              routerLink="/about"
+              routerLinkActive="text-indigo-400"
+            >
               About
             </a>
           </li>
