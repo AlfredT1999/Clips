@@ -30,6 +30,9 @@
           <p>
             {{ alertMsg }}
           </p>
+          <p *ngIf="showPercentage">
+            {{ percentage | percent }}
+          </p>
         </app-alert>
 
         <!-- Form -->
