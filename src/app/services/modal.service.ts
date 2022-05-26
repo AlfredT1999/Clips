@@ -31,4 +31,8 @@ export class ModalService {
 
     if(modal) modal.visible = !modal.visible
   }
+
+  unregister(id: string) {
+    this.modals.filter(element => element.id !== id)
+  }
 }
